@@ -1,0 +1,50 @@
+/* 
+ * Prática 04: Vetores 
+ * Exercício 1
+ * Ler um vetor A de 10 elementos inteiros, pedir que o usuário digite um outro
+ * número inteiro X. Escrever a mensagem ACHEI, se X for um elemento de A
+ * e NÃO ACHEI caso contrário.
+ */
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+	// Declaração de variáveis
+	int x, vetA [10]; // 'x' será o outro número inteiro a ser digitado pelo usuário
+	
+	// Preenchendo o vetor de 10 posições a partir
+	// da leitura de valores dados pelo usuário
+	for (int i = 0; i < 10; i++)
+	{
+		system("cls"); // Limpa a tela
+		printf("\n Entre com o valor da %d.a posicao do vetor: ", (i + 1));
+		scanf("%d", &vetA[i]);
+	}
+	
+	// Recebendo o outro número inteiro 'x' do usuário
+	printf("\n Digite um valor inteiro: ");
+	scanf("%d", &x);
+	
+	// Percorrendo 'vetA' e verificando se 'x' pertence ao conjunto ou não
+	for (int i = 0; i < 10; i++)
+	{
+		// Imprime "ACHEI!" caso 'x' pertença ao conjunto de 'vetA'
+		if (x == vetA[i])
+		{
+			printf("\n ACHEI!");	
+		}
+		// Imprime "NÃO ACHEI!" caso 'x' não pertença ao conjunto de 'vetA'
+		else
+		{
+			printf("\n NAO ACHEI!");
+		}
+	}
+	
+	// Finalizando o programa
+	printf("\n"); // Pula linha
+	return 0;
+}
