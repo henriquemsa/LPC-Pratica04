@@ -1,0 +1,67 @@
+/* 
+ * Prática 04: Vetores 
+ * Exercício 4
+ * Escreva um programa para ler um vetor de dez números inteiros. Troque os
+ * valores do vetor dois a dois, ou seja, os elementos cujos índices do vetor
+ * são pares devem ser trocados pelos elementos de índice ímpares
+ * imediatamente vizinhos a estes. Exiba na tela o vetor resultante desta troca
+ * dos valores.
+ */
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+	// Declaração de variáveis
+	int x, vetor [10], trocado [10]; // 'x' será uma variável auxiliar
+	
+	// Preenchendo o vetor de 10 posições a partir
+	// da leitura de valores dados pelo usuário
+	for (int i = 0; i < 10; i++)
+	{
+		system("cls"); // Limpa a tela
+		printf("\n Entre com o valor da %d.a posicao do vetor: ", (i + 1));
+		scanf("%d", &vetor[i]);
+	}
+	
+	// Trocando as posições pares e ímpares do vetor
+	x = 1; // Inicializando variável auxiliar como 1 para partir da posição 1 do vetor original
+	for (int m = 0; m < 10; m ++)
+	{
+			trocado [m] = vetor [x]; // Atribui o valor da posição 'x' de 'vetor' para posição 'm' de 'trocado'
+			
+			// Testa se o valor de 'x' é par ou ímpar
+			if (x % 2 == 0)
+			{
+				x+=3; // Adiciona 3 caso 'x' for par
+			}
+			else
+			{
+				x--; // Subtrai 1 caso 'x' for ímpar
+			}
+	}
+
+	// Imprimindo vetor original
+	system("cls"); // Limpa a tela
+	printf("\n Vetor original: ");
+	printf("\n"); // Pula linha
+	for (int k = 0; k < 10; k++)
+	{
+		printf("[%d] ", vetor[k]);
+	}
+	
+	// Imprimindo vetor trocado
+	printf("\n Vetor trocado: ");
+	printf("\n"); // Pula linha
+	for (int j = 0; j < 10; j++)
+	{
+		printf("[%d] ", trocado[j]);
+	}
+	
+	// Finalizando o programa
+	printf("\n"); // Pula linha
+	return 0;
+}
