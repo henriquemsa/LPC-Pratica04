@@ -1,0 +1,67 @@
+/* 
+ * Prática 04: Vetores 
+ * Exercício 2
+ * Faça um programa para ler dois vetores de 10 elementos inteiros cada um,
+ * criar e imprimir um vetor resultante da intercalação desses dois vetores.
+ */
+
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+	// Declaração de variáveis
+	int vetA [10], vetB [10], inter [20]; // dois vetores de 10 posições cada 
+										  // e um vetor de intercalação de 20 posições 
+	
+	// Preenchendo 'vetA' de 10 posições a partir
+	// da leitura de valores dados pelo usuário
+	for (int i = 0; i < 10; i++)
+	{
+		system("cls"); // Limpa a tela
+		printf("\n Entre com o valor da %d.a posicao do vetor A: ", (i + 1));
+		scanf("%d", &vetA[i]);
+	}
+	
+	// Preenchendo 'vetB' de 10 posições a partir
+	// da leitura de valores dados pelo usuário
+	for (int i = 0; i < 10; i++)
+	{
+		system("cls"); // Limpa a tela
+		printf("\n Entre com o valor da %d.a posicao do vetor B: ", (i + 1));
+		scanf("%d", &vetB[i]);
+	}
+	
+	// Intercalando 'vetA' e 'vetB' em 'inter'
+	int j = -2; // Criando variável auxiliar para percorrer 'inter'
+	// Inserindo valores de 'vetA'
+	for (int i = 0; i < 10; i ++) // Percorre 'inter' de duas em duas posições, a partir da posição 0
+	{
+		j += 2; // Pula 2 posições dentro do vetor 'inter'
+		inter[j] = vetA[i]; // Atribui valor de 'vetA[i]' para 'inter[j]'
+	}
+	
+	j = -1; // Atualizando valor da variável auxiliar
+	
+	// Inserindo valores de 'vetB'
+	for (int i = 0; i < 10; i ++) // Percorre 'inter' de duas em duas posições, a partir da posição 1
+	{
+		j += 2; // Pula 2 posições dentro do vetor 'inter'
+		inter[j] = vetB[i]; // Atribui valor de 'vetB[i]' para 'inter[j]'
+	}
+	
+	// Imprimindo resultado 'inter'
+	system("cls"); // Limpa a tela
+	printf("\n Vetor de intercalacao: ");
+	printf("\n"); // Pula linha
+	for (int j = 0; j < 20; j++)
+	{
+		printf("[%d] ", inter[j]);
+	}
+	
+	// Finalizando o programa
+	printf("\n"); // Pula linha
+	return 0;
+}
